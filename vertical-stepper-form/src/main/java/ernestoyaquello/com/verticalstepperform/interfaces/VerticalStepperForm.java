@@ -10,7 +10,7 @@ public interface VerticalStepperForm {
      * @param stepNumber the number of the step
      * @return The view that will be automatically added as the content of the step
      */
-    void createStepContentView(int stepNumber, ViewGroup stepContent);
+    void createStepContentView(int stepNumber, ViewGroup stepContent, ViewGroup content);
 
     /**
      * This method will be called every time a certain step is open
