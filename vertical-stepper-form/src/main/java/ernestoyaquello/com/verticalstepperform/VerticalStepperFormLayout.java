@@ -550,7 +550,7 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
             addStepToContent(stepLayout);
             // The content of the step is the corresponding custom view previously created
             RelativeLayout stepContent = stepLayout.findViewById(R.id.step_content);
-            stepContent.removeAllViews();
+            //stepContent.removeAllViews();
             verticalStepperFormImplementation.createStepContentView(stepNumber, stepContent);
         } else {
             setUpStepLayoutAsConfirmationStepLayout(stepLayout);
