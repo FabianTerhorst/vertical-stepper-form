@@ -65,7 +65,6 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
     protected LinearLayout content;
     protected ScrollView stepsScrollView;
     protected List<LinearLayout> stepLayouts;
-    protected List<View> stepContentViews;
     protected List<TextView> stepsTitlesViews;
     protected List<TextView> stepsSubtitlesViews;
     protected AppCompatButton confirmationButton;
@@ -480,13 +479,6 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
     protected void initStepperForm(String[] stepsTitles, String[] stepsSubtitles) {
         setSteps(stepsTitles, stepsSubtitles);
 
-        List<View> stepContentLayouts = new ArrayList<>();
-        for (int i = 0; i < numberOfSteps; i++) {
-            View stepLayout = verticalStepperFormImplementation.createStepContentView(i);
-            stepContentLayouts.add(stepLayout);
-        }
-        stepContentViews = stepContentLayouts;
-
         initializeForm();
 
         verticalStepperFormImplementation.onStepOpening(activeStep);
@@ -557,11 +549,8 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
         if (stepNumber < numberOfSteps) {
             // The content of the step is the corresponding custom view previously created
             RelativeLayout stepContent = stepLayout.findViewById(R.id.step_content);
-            ViewParent viewParent = stepContentViews.get(stepNumber).getParent();
-            // Check if it has a view parent.
-            if(viewParent != null)
-                ((ViewGroup) viewParent).removeView(stepContentViews.get(stepNumber));
-            stepContent.addView(stepContentViews.get(stepNumber));
+            stepContent.removeAllViews();
+            verticalStepperFormImplementation.createStepContentView(stepNumber, stepContent);
         } else {
             setUpStepLayoutAsConfirmationStepLayout(stepLayout);
         }

@@ -19,6 +19,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -103,7 +104,7 @@ public class NewAlarmFormActivity extends AppCompatActivity implements VerticalS
     // (Implementation of the interface "VerticalStepperForm")
 
     @Override
-    public View createStepContentView(int stepNumber) {
+    public void createStepContentView(int stepNumber, ViewGroup stepContent) {
         // Here we generate the content view of the correspondent step and we return it so it gets
         // automatically added to the step layout (AKA stepContent)
         View view = null;
@@ -121,7 +122,7 @@ public class NewAlarmFormActivity extends AppCompatActivity implements VerticalS
                 view = createAlarmDaysStep();
                 break;
         }
-        return view;
+        stepContent.addView(view);
     }
 
     @Override
