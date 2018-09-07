@@ -721,13 +721,13 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
         LinearLayout button = (LinearLayout) stepLayout.findViewById(R.id.next_step_button_container);
         RelativeLayout stepContent = (RelativeLayout) stepLayout.findViewById(R.id.step_content);
 
-        if (smoothieDisabling) {
+        /*if (smoothieDisabling) {
             Animations.slideUp(button);
             Animations.slideUp(stepContent);
-        } else {
+        } else {*/
             button.setVisibility(View.GONE);
             stepContent.setVisibility(View.GONE);
-        }
+        //}
 
         if (!completedSteps[stepNumber]) {
             disableStepHeader(stepLayout);
@@ -753,13 +753,13 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
 
         enableStepHeader(stepLayout);
 
-        if (smoothieEnabling) {
+        /*if (smoothieEnabling) {
             Animations.slideDown(stepContent);
             Animations.slideDown(button);
-        } else {
+        } else {*/
             stepContent.setVisibility(View.VISIBLE);
             button.setVisibility(View.VISIBLE);
-        }
+        //}
 
         if (completedSteps[stepNumber] && activeStep != stepNumber) {
             stepDone.setVisibility(View.VISIBLE);

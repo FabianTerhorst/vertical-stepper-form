@@ -97,5 +97,4 @@ public class Animations {
         //v.getLayoutParams().height = newHeight;
         v.setLayoutParams(new LinearLayout.LayoutParams(v.getLayoutParams().width, newHeight));
     }
-
 }
