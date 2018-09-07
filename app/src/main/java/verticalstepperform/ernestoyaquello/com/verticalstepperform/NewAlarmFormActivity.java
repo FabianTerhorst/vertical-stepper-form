@@ -9,9 +9,10 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.util.Pair;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.util.Pair;
+import androidx.core.view.ViewCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -324,7 +325,7 @@ public class NewAlarmFormActivity extends AppCompatActivity implements VerticalS
                 ernestoyaquello.com.verticalstepperform.R.drawable.circle_step_done);
         int colorPrimary = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary);
         bg.setColorFilter(new PorterDuffColorFilter(colorPrimary, PorterDuff.Mode.SRC_IN));
-        dayLayout.setBackground(bg);
+        ViewCompat.setBackground(dayLayout, bg);
 
         TextView dayText = (TextView) dayLayout.findViewById(R.id.day);
         dayText.setTextColor(Color.rgb(255, 255, 255));
