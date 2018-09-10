@@ -1,0 +1,14 @@
+<resources>
+    <string name="vertical_form_stepper_form_continue">Weiter</string>
+    <string name="vertical_form_stepper_form_discard_question">Verwerfen?</string>
+    <string name="vertical_form_stepper_form_info_will_be_lost">Alle eingetragenen Daten gehen verloren</string>
+    <string name="vertical_form_stepper_form_discard_cancel">Abbrechen</string>
+    <string name="vertical_form_stepper_form_discard">Verwerfen</string>
+    <string name="vertical_form_stepper_form_confirm_button">Bestätigen</string>
+    <string name="vertical_form_stepper_form_last_step">Bestätigung</string>
+    <string name="vertical_form_stepper_form_sending_data_message">Übermittle Daten…</string>
+    <string name="vertical_form_stepper_form_current_step_uncompleted_alert">Bitte vervollständige die Daten um fortzufahren</string>
+
+    <string name="vertical_form_stepper_form_down_previous">down_previous</string>
+    <string name="vertical_form_stepper_form_down_next">down_next</string>
+</resources>
